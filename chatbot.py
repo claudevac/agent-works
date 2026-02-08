@@ -46,8 +46,10 @@ def main():
             messages.insert(0, system_msg)
             first_turn = False
 
-        response = chatbot.invoke(messages, config=config)
-        print(f"Bot: {response.content}\n")
+        print("Bot: ", end="", flush=True)
+        for chunk in chatbot.stream(messages, config=config):
+            print(chunk.content, end="", flush=True)
+        print("\n")
 
 
 if __name__ == "__main__":
