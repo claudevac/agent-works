@@ -1,0 +1,32 @@
+[
+  {
+    "id": "summer_sale_h1",
+    "source": "Summer Sale — Up to 50% Off, Today Only!",
+    "channel": "google_search_headline",
+    "brief": "Fast-fashion retailer. Playful, energetic, urgency-driven voice. Speak to Gen-Z shoppers."
+  },
+  {
+    "id": "free_shipping_desc",
+    "source": "Free shipping on orders over $50. Shop the new collection now at checkout.",
+    "channel": "google_search_description",
+    "brief": "Mid-market apparel brand. Warm, reassuring tone. Greek consumers are price- and shipping-sensitive."
+  },
+  {
+    "id": "app_install_primary",
+    "source": "Book a table in seconds. Download the {{app_name}} app and get €10 off your first order.",
+    "channel": "meta_primary_text",
+    "brief": "Restaurant booking app. Friendly, convenient, modern. Keep the {{app_name}} placeholder intact."
+  },
+  {
+    "id": "b2b_demo_cta",
+    "source": "See how Acme cuts reporting time by 40%. Book your free demo today.",
+    "channel": "linkedin_headline",
+    "brief": "B2B SaaS. Professional, credible, outcome-focused. 'Acme' is the brand name and must not be translated."
+  },
+  {
+    "id": "loyalty_pushback",
+    "source": "Earn 2x points this weekend only. Treat yourself — you deserve it.",
+    "channel": "meta_primary_text",
+    "brief": "Beauty & cosmetics loyalty program. Indulgent, encouraging tone. Avoid pushy or aggressive phrasing."
+  }
+]

@@ -1,0 +1,45 @@
+# Deterministic translation rules for English -> Greek (el-GR) ad copy.
+# Every key here is consumed by a code grader in src/graders/code/. These checks
+# are free, deterministic, and regression-proof — they encode the hard rules a
+# localization MUST follow, independent of taste.
+
+locale: el-GR
+
+# Required term mappings. If the English `source` term appears in a task's
+# source copy, the Greek `target` MUST appear in the output. Catches glossary
+# drift (e.g. translating "checkout" inconsistently).
+glossary:
+  - { source: "checkout", target: "ταμείο" }
+  - { source: "free shipping", target: "δωρεάν αποστολή" }
+  - { source: "demo", target: "demo" } # kept in English by brand convention
+
+# Brand names / product names that must survive verbatim in the output.
+do_not_translate:
+  - "Acme"
+  - "{{app_name}}"
+
+# Template tokens that must be preserved exactly (ad platforms substitute these
+# at serve time — a dropped or mangled token breaks the ad).
+placeholders:
+  - "{{app_name}}"
+  - "{price}"
+  - "%s"
+
+# Hard character limits per ad channel. Output over the limit gets truncated by
+# the platform, so this is a correctness rule, not a style preference.
+length_limits:
+  google_search_headline: 30
+  google_search_description: 90
+  meta_primary_text: 125
+  linkedin_headline: 70
+
+# el-GR number/currency conventions. Greek uses a comma decimal separator and a
+# trailing euro sign (e.g. "19,99 €"), and never the dollar sign.
+locale_format:
+  decimal_separator: ","
+  currency: "trailing-euro"
+
+# Anglicisms / off-brand terms that should never appear in Greek output.
+banned_terms:
+  - "σαπ" # transliterated "shop", a common lazy anglicism
+  - "ντιλ" # transliterated "deal"

@@ -1,0 +1,42 @@
+# Configurable "taste" rubric for the LLM-as-judge.
+#
+# This is the subjective layer: how good is the Greek copy as *advertising*,
+# not just as a translation. Each criterion becomes one scorecard column (0-5),
+# and the weighted average becomes the headline "Taste (wtd)" column.
+#
+# Tune freely per brand/campaign — add, remove, reweight, or reword criteria.
+# The judge prompt and the structured-output schema are built from this file at
+# runtime, so no code changes are needed.
+
+locale: el-GR
+
+# Model used for judging. Should be a strong vision-free text model.
+model: claude-opus-4-7
+
+criteria:
+  fluency:
+    weight: 1.0
+    rubric: >
+      Reads as natural, idiomatic modern Greek. No translationese, no literal
+      calques of English syntax, correct grammar/accents/final sigma.
+  tone_match:
+    weight: 1.5
+    rubric: >
+      Matches the register and voice described in the task brief (e.g. playful,
+      professional, reassuring). Penalize tone drift from the brief.
+  transcreation:
+    weight: 1.0
+    rubric: >
+      Idioms, wordplay, and cultural references are adapted for a Greek
+      audience rather than translated literally. Reward creative, locally
+      resonant adaptation over word-for-word fidelity.
+  persuasiveness:
+    weight: 1.0
+    rubric: >
+      The copy is compelling as an ad and the call-to-action feels natural and
+      motivating to a Greek consumer.
+  brevity_fit:
+    weight: 0.5
+    rubric: >
+      The message is as tight as the channel demands; nothing padded or
+      awkwardly truncated to fit.
