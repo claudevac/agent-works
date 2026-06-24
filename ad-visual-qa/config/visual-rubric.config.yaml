@@ -1,0 +1,52 @@
+# Configurable rubric for the vision analyst. Each criterion becomes one
+# scorecard column (0-5); the weighted average becomes "Adapt (wtd)".
+# The judge compares the AFTER (adapted) asset against the BEFORE (original).
+#
+# Edit criteria/weights/rubrics freely — the judge prompt and the structured-
+# output schema are built from this file at runtime (no code change).
+
+# Vision-capable model used for analysis.
+model: claude-opus-4-8
+
+criteria:
+  focal_point_preserved:
+    weight: 1.5
+    rubric: >
+      The main subject / hero element from the BEFORE asset is still fully
+      visible and well-composed in the AFTER. Penalize cropping that cuts off
+      faces, products, or key imagery.
+  text_legibility:
+    weight: 1.0
+    rubric: >
+      All text in the AFTER is sharp, large enough to read at the target size,
+      not clipped at edges, and has sufficient contrast against its background.
+  logo_safe_zone:
+    weight: 1.0
+    rubric: >
+      The logo is present, intact (not cropped or distorted), and clear of the
+      platform safe zones (e.g. top/bottom UI chrome on stories).
+  cta_visibility:
+    weight: 1.0
+    rubric: >
+      The call-to-action / button is fully visible, unobstructed, and within
+      safe zones. Penalize a CTA that is cut off or overlapped.
+  no_distortion:
+    weight: 1.0
+    rubric: >
+      No stretching or squashing. Subjects keep natural proportions versus the
+      BEFORE; circles stay round, faces are not warped.
+  color_consistency:
+    weight: 0.5
+    rubric: >
+      Colors and brand palette match the BEFORE. No hue shifts, washed-out
+      tones, banding, or compression artifacts.
+  brand_consistency:
+    weight: 0.5
+    rubric: >
+      The AFTER reads as the same campaign as the BEFORE — consistent style,
+      typography, and overall look and feel.
+  overall_adaptation:
+    weight: 1.5
+    rubric: >
+      Holistic quality of the adaptation as a finished ad for the target
+      placement. Would you ship it as-is?

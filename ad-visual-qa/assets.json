@@ -1,0 +1,23 @@
+[
+  {
+    "id": "summer_sale__1x1_to_9x16",
+    "before": "assets/summer_sale_1x1.png",
+    "after": "assets/summer_sale_9x16.png",
+    "targetFormat": "story_9x16",
+    "brief": "Fast-fashion summer sale. Hero is the model holding the bag; keep her face and the '50% OFF' badge visible. Logo top-left, 'Shop now' CTA button at the bottom."
+  },
+  {
+    "id": "demo_book__16x9_to_4x5",
+    "before": "assets/demo_book_16x9.png",
+    "after": "assets/demo_book_4x5.png",
+    "targetFormat": "feed_4x5",
+    "brief": "B2B SaaS demo ad. Keep the product dashboard screenshot readable and the 'Book a demo' CTA fully visible. Acme logo must stay intact."
+  },
+  {
+    "id": "loyalty__1x1_to_728x90",
+    "before": "assets/loyalty_1x1.png",
+    "after": "assets/loyalty_728x90.png",
+    "targetFormat": "leaderboard_728x90",
+    "brief": "Beauty loyalty banner. Extreme reflow to a thin leaderboard — watch for unreadable text and a cropped logo/CTA."
+  }
+]

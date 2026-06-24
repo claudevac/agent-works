@@ -1,0 +1,56 @@
+# Target ad-format specs. The deterministic code graders check the AFTER asset
+# against the spec named by each asset's `targetFormat`. Add formats freely.
+#
+# - width/height:      expected pixel dimensions of the adapted asset
+# - aspect:            expected width/height ratio
+# - aspect_tolerance:  allowed deviation from `aspect` before it's flagged
+# - max_file_kb:       platform file-size budget (KB); 0 = no limit
+# - safe_zone:         fractional insets reserved for platform UI (informational;
+#                      the vision judge uses these when scoring logo/CTA placement)
+# - required_elements: elements the creative must retain (used in the judge prompt)
+
+formats:
+  story_9x16:
+    width: 1080
+    height: 1920
+    aspect: 0.5625
+    aspect_tolerance: 0.02
+    max_file_kb: 4096
+    safe_zone: { top: 0.14, bottom: 0.20 }
+    required_elements: ["logo", "headline", "cta"]
+
+  feed_4x5:
+    width: 1080
+    height: 1350
+    aspect: 0.8
+    aspect_tolerance: 0.02
+    max_file_kb: 2048
+    safe_zone: { top: 0.0, bottom: 0.0 }
+    required_elements: ["logo", "cta"]
+
+  square_1x1:
+    width: 1080
+    height: 1080
+    aspect: 1.0
+    aspect_tolerance: 0.02
+    max_file_kb: 2048
+    safe_zone: { top: 0.0, bottom: 0.0 }
+    required_elements: ["logo", "cta"]
+
+  landscape_16x9:
+    width: 1920
+    height: 1080
+    aspect: 1.7778
+    aspect_tolerance: 0.02
+    max_file_kb: 4096
+    safe_zone: { top: 0.0, bottom: 0.0 }
+    required_elements: ["logo", "cta"]
+
+  leaderboard_728x90:
+    width: 728
+    height: 90
+    aspect: 8.0889
+    aspect_tolerance: 0.05
+    max_file_kb: 150
+    safe_zone: { top: 0.0, bottom: 0.0 }
+    required_elements: ["logo", "cta"]

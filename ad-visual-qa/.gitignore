@@ -1,0 +1,8 @@
+node_modules/
+runs/
+.env
+# Generated/real creative assets — keep the repo light. Commit only sample placeholders if any.
+assets/*.png
+assets/*.jpg
+assets/*.jpeg
+assets/*.webp
